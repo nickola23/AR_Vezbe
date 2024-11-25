@@ -1,0 +1,1 @@
+Napisati program koji broji koliko se reci zavrsava na slovo "a"

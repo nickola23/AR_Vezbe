@@ -1,0 +1,29 @@
+Napisati asemblerski program koji prvo ispisuje poruku input_msg, a nakon toga sa standardnog ulaza učitava string sa najviše 50 karaktera. Program treba da prepozna sve cifre u unetom stringu i računa njihov zbir. Ako zbir cifara bude paran, program vraća izlazni kod 0, a ako zbir bude neparan, program vraća izlazni kod 1. Ako string ne sadrži nijednu cifru, program vraća izlazni kod 2.
+
+Napomena: String može sadržavati i slova, ali samo cifre treba da se računaju.
+
+Primeri:
+
+    Unesite string:
+    abc123xyz
+
+    Rezultujući izlaz:
+    Izlazni kod: 6 (zbir cifara: 1 + 2 + 3 = 6, paran broj)
+
+    Unesite string:
+    abcd5e6f7g
+
+    Rezultujući izlaz:
+    Izlazni kod: 0 (zbir cifara: 5 + 6 + 7 = 18, paran broj)
+
+    Unesite string:
+    noDigitsHere
+
+    Rezultujući izlaz:
+    Izlazni kod: 2 (nema cifara)
+
+    Unesite string:
+    123abc456
+
+    Rezultujući izlaz:
+    Izlazni kod: 21 (zbir cifara: 1 + 2 + 3 + 4 + 5 + 6 = 21, neparan broj)
