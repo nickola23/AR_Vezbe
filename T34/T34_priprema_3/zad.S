@@ -21,31 +21,31 @@ while:
 	movl $2, %edx				#maska za invertovanje
 	
 menjaj:
-	andl %ecx, %ecx
-	jz sledeci
+	andl %ecx, %ecx				#ako je kraj maske
+	jz sledeci					#predji na sledeci element niza
 	andl %edx, %edx
 	jz sledeci
 	
-	testl %ecx, (%eax, %esi, 4)
+	testl %ecx, (%eax, %esi, 4) #da li je trenutni bit 0
 	jnz invertuj
 	
-sledeci_bit:
+sledeci_bit:					#sledeci bit
 	shll %ecx
 	shll %edx
 	jmp menjaj
 	
-invertuj:
-	xorl %edx, (%eax, %esi, 4)
-	incl %edi
+invertuj:						#ako je 1 invertuj
+	xorl %edx, (%eax, %esi, 4)	#invertuj sledeci bit
+	incl %edi					#broj invetovanih ++
 	jmp sledeci_bit
 
-sledeci:
+sledeci:						#sledeci element niza
 	incl %esi
 	jmp while
 
-kraj:
-	movl %edi, %eax
-	
+kraj:							#kraj
+	movl %edi, %eax				#premesti broj invertovaih 
+								#u return
 	popl %edi
 	popl %esi
 	popl %ebx
